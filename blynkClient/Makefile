@@ -9,7 +9,7 @@
 CC ?= gcc
 CXX ?= g++
 CFLAGS += -I ../roofClient  -I ../roofCommon
-CXXFLAGS += -I ./blynkLib/src/ -I ./ -DBLYNKCLIENT
+CXXFLAGS += -I ./blynkLib/src/ -I ../roofClient  -I ../roofCommon -I ./ -DBLYNKCLIENT
 LDFLAGS += -lrt -lpthread
 
 ifeq ($(build),debug)

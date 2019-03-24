@@ -8,7 +8,7 @@
 
 CC ?= gcc
 CXX ?= g++
-CFLAGS += -I ../roofCommon -I ./roofClient -I ./ -DTERMCLIENT
+CFLAGS += -I ../roofCommon -I ../roofClient -I ./ -DTERMCLIENT
 LDFLAGS += -lrt -lpthread
 
 ifeq ($(build),debug)
