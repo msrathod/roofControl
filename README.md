@@ -9,3 +9,4 @@ roofCommon	 { Common files for roof server/client. }
 roofManager	 { Roof Manager manages the clients and controls the roof.}
 termClient	 { Terminal based client to send cmnds to server.}
 ```
+![roofManager](https://github.com/msrathod/roofControl/blob/master/extras/Roof%20control%20layout.png)
