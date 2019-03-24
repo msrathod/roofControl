@@ -29,6 +29,7 @@ enum Cmd_Alias
 
 	CMD_CAPTURE		    = 0x60,
 	CMD_GET_IMAGE		,
+	CMD_UNKNOWN			,
 };
 
 #ifdef __cplusplus
