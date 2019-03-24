@@ -8,8 +8,8 @@
 
 CC ?= gcc
 CXX ?= g++
-CFLAGS += -I ./
-CXXFLAGS += -I ../src/ -I ./ -DLINUX
+CFLAGS += -I ../roofClient  -I ../roofCommon
+CXXFLAGS += -I ./blynkLib/src/ -I ./ -DBLYNKCLIENT
 LDFLAGS += -lrt -lpthread
 
 ifeq ($(build),debug)
@@ -52,13 +52,14 @@ ifeq ($(target),raspberry)
 endif
 
 CXX_SOURCES=main.cpp \
-	../src/utility/BlynkDebug.cpp \
-	../src/utility/BlynkHandlers.cpp \
-	../src/utility/BlynkTimer.cpp
+	./blynkLib/src/utility/BlynkDebug.cpp \
+	./blynkLib/src/utility/BlynkHandlers.cpp \
+	./blynkLib/src/utility/BlynkTimer.cpp
 
 CXX_OBJECTS=$(CXX_SOURCES:.cpp=.o)
 
-C_SOURCES=roof_client.c
+C_SOURCES=../roofClient/roofClient.c
+
 C_OBJECTS=$(C_SOURCES:.c=.o)
 
 EXECUTABLE=blynkClient

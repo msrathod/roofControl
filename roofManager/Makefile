@@ -8,7 +8,7 @@
 
 CC ?= gcc
 CXX ?= g++
-CFLAGS += -I ./
+CFLAGS += -I ../roofCommon -I ./ -DROOFMANAGER
 LDFLAGS += -lrt -lpthread
 
 ifeq ($(build),debug)
@@ -45,17 +45,13 @@ else
 	LDFLAGS += -s
 endif
 
-ifeq ($(target),raspberry)
-	CXXFLAGS += -DRASPBERRY
-	LDFLAGS += -lwiringPi
-endif
-
-C_SOURCES=roof_server.c \
-		cmd_hndlr.c
+C_SOURCES=roofManager.c \
+		./cmdParser.c \
+		./roofServer.c
 
 C_OBJECTS=$(C_SOURCES:.c=.o)
 
-EXECUTABLE=roofServer
+EXECUTABLE=roofManager
 
 all: $(C_SOURCES) $(EXECUTABLE)
 
