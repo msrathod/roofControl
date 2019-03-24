@@ -3,7 +3,7 @@
  *  roofClient.c: Writes cmd to be run in POSIX shared memory object
  *                 
  */
-#include "roofClient.h"
+#include <roofClient.h>
 
 // Setup shared memory and semaphores
 void client_setup()

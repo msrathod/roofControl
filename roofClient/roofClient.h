@@ -10,7 +10,7 @@
 extern "C" {
 #endif
 
-#include "roofCommon.h"
+#include <roofCommon.h>
 
 struct shared_memory *shm_ptr;
 sem_t *mutex_sem, *cmd_count_sem, *spool_signal_sem;

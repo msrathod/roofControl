@@ -1,6 +1,6 @@
 #include <string.h>
-#include "roofClient.h"
-#include "roofCMD.h"
+#include <roofClient.h>
+#include <roofCMD.h>
 
 char buf [128];
 unsigned char ucmd;
