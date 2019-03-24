@@ -8,7 +8,7 @@
 
 CC ?= gcc
 CXX ?= g++
-CFLAGS += -I ../roofCommon -I ./ -DROOFMANAGER
+CFLAGS += -I ../roofCommon -I ./roofClient -I ./ -DREMOTECLIENT
 LDFLAGS += -lrt -lpthread
 
 ifeq ($(build),debug)
@@ -45,13 +45,12 @@ else
 	LDFLAGS += -s
 endif
 
-C_SOURCES=roofManager.c \
-		./cmdParser.c \
-		./roofServer.c
+C_SOURCES=remoteClient.c \
+		../roofClient/roofClient.c 
 
 C_OBJECTS=$(C_SOURCES:.c=.o)
 
-EXECUTABLE=roofManager
+EXECUTABLE=remoteClient
 
 all: $(C_SOURCES) $(EXECUTABLE)
 
