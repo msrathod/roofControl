@@ -10,14 +10,14 @@ unsigned char getCmd(char* mybuf);
 void setup()
 {
   client_setup();
-  printf ("Please type a command: ");
+  printf ("Please type a command: \n");
 }
 
 void loop()
 {
   ucmd = getCmd(buf);
   client_push_cmd(ucmd);
-  printf ("Please type a command: ");
+  printf ("Please type a command: \n");
 }
 
 int main(int argc, char* argv[])
